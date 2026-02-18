@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { LayoutDashboard, TrendingUp, ShieldCheck, Brain, ChevronRight, Sliders } from 'lucide-react'
+import { LayoutDashboard, TrendingUp, ShieldCheck, Brain, ChevronRight, Sliders, Bot } from 'lucide-react'
 import Overview from './pages/Overview'
 import DemandForecast from './pages/DemandForecast'
 import InventoryHealth from './pages/InventoryHealth'
@@ -7,6 +7,7 @@ import Recommendations from './pages/Recommendations'
 import ComponentDetail from './pages/ComponentDetail'
 import ChatCopilot from './components/ChatCopilot'
 import WhatIfSimulator from './components/WhatIfSimulator'
+import AgentHub from './pages/AgentHub'
 
 const NAV = [
   { id: 'overview', label: 'Overview', icon: LayoutDashboard },
@@ -14,6 +15,7 @@ const NAV = [
   { id: 'inventory', label: 'Inventory Health', icon: ShieldCheck },
   { id: 'recommendations', label: 'AI Recommendations', icon: Brain },
   { id: 'simulator', label: 'What-If Simulator', icon: Sliders },
+  { id: 'agent', label: 'Agent Hub', icon: Bot },
 ]
 
 export default function App() {
@@ -182,6 +184,7 @@ export default function App() {
           {tab === 'inventory' && <InventoryHealth data={data} onSelect={showDetail} />}
           {tab === 'recommendations' && <Recommendations data={data} />}
           {tab === 'simulator' && <WhatIfSimulator data={data} />}
+          {tab === 'agent' && <AgentHub data={data} />}
           {tab === 'detail' && selectedComponent && (
             <ComponentDetail component={selectedComponent} data={data} onBack={goBack} />
           )}
