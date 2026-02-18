@@ -1,0 +1,77 @@
+{
+  "AC Unit": {
+    "MAE": 10.1,
+    "MAPE": 7.9,
+    "WMAPE": 6.3
+  },
+  "Camera System": {
+    "MAE": 11.2,
+    "MAPE": 8.2,
+    "WMAPE": 6.5
+  },
+  "Crossing Gate": {
+    "MAE": 14.9,
+    "MAPE": 7.4,
+    "WMAPE": 5.8
+  },
+  "Exterior Paint": {
+    "MAE": 9.9,
+    "MAPE": 13.5,
+    "WMAPE": 7.2
+  },
+  "Floor Colour": {
+    "MAE": 9.2,
+    "MAPE": 10.7,
+    "WMAPE": 8.0
+  },
+  "Fuel Type": {
+    "MAE": 9.2,
+    "MAPE": 8.5,
+    "WMAPE": 6.7
+  },
+  "Handrails": {
+    "MAE": 13.2,
+    "MAPE": 6.8,
+    "WMAPE": 5.8
+  },
+  "Interior Trim": {
+    "MAE": 11.8,
+    "MAPE": 10.1,
+    "WMAPE": 6.9
+  },
+  "Lighting Package": {
+    "MAE": 14.2,
+    "MAPE": 8.3,
+    "WMAPE": 8.3
+  },
+  "Mirrors": {
+    "MAE": 13.0,
+    "MAPE": 9.3,
+    "WMAPE": 7.5
+  },
+  "Roof Hatch": {
+    "MAE": 9.7,
+    "MAPE": 5.8,
+    "WMAPE": 4.2
+  },
+  "Seat Material": {
+    "MAE": 8.5,
+    "MAPE": 9.0,
+    "WMAPE": 6.1
+  },
+  "Stop Arm": {
+    "MAE": 10.8,
+    "MAPE": 6.4,
+    "WMAPE": 4.7
+  },
+  "Storage Compartments": {
+    "MAE": 14.7,
+    "MAPE": 9.9,
+    "WMAPE": 7.9
+  },
+  "Wheelchair Lift": {
+    "MAE": 5.8,
+    "MAPE": 10.8,
+    "WMAPE": 8.3
+  }
+}

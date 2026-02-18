@@ -1,0 +1,62 @@
+component_id,category,variant,popularity_weight,unit_cost
+CMP-0001,Floor Colour,Grey Standard,0.4,268.8
+CMP-0002,Floor Colour,Blue,0.2,246.4
+CMP-0003,Floor Colour,Black,0.15,240.8
+CMP-0004,Floor Colour,Green,0.1,235.2
+CMP-0005,Floor Colour,Brown,0.1,235.2
+CMP-0006,Floor Colour,Red,0.05,229.6
+CMP-0007,Seat Material,Vinyl Brown,0.35,79.9
+CMP-0008,Seat Material,Vinyl Blue,0.25,76.5
+CMP-0009,Seat Material,Vinyl Grey,0.2,74.8
+CMP-0010,Seat Material,Fabric Blue,0.1,71.4
+CMP-0011,Seat Material,Fabric Grey,0.1,71.4
+CMP-0012,Interior Trim,Standard White,0.45,117.6
+CMP-0013,Interior Trim,Grey,0.25,108.0
+CMP-0014,Interior Trim,Blue,0.15,103.2
+CMP-0015,Interior Trim,Black,0.15,103.2
+CMP-0016,Exterior Paint,National School Bus Yellow,0.6,988.0
+CMP-0017,Exterior Paint,White,0.15,817.0
+CMP-0018,Exterior Paint,Activity Bus Blue,0.1,798.0
+CMP-0019,Exterior Paint,Black,0.08,790.4
+CMP-0020,Exterior Paint,Custom,0.07,786.6
+CMP-0021,Wheelchair Lift,None,0.7,4536.0
+CMP-0022,Wheelchair Lift,Type A Hydraulic,0.15,3612.0
+CMP-0023,Wheelchair Lift,Type B Electric,0.1,3528.0
+CMP-0024,Wheelchair Lift,Type C Heavy-Duty,0.05,3444.0
+CMP-0025,AC Unit,None,0.3,2852.0
+CMP-0026,AC Unit,Roof-Mount Standard,0.35,2914.0
+CMP-0027,AC Unit,Roof-Mount Heavy,0.2,2728.0
+CMP-0028,AC Unit,Split System,0.15,2666.0
+CMP-0029,Camera System,Basic 4-Camera,0.3,1656.0
+CMP-0030,Camera System,8-Camera HD,0.35,1692.0
+CMP-0031,Camera System,12-Camera 360°,0.2,1584.0
+CMP-0032,Camera System,AI Vision Pro,0.15,1548.0
+CMP-0033,Lighting Package,Standard Halogen,0.25,585.0
+CMP-0034,Lighting Package,LED Basic,0.35,611.0
+CMP-0035,Lighting Package,LED Premium,0.25,585.0
+CMP-0036,Lighting Package,LED + Emergency Strobe,0.15,559.0
+CMP-0037,Handrails,Standard Steel,0.5,180.0
+CMP-0038,Handrails,Padded Steel,0.3,165.6
+CMP-0039,Handrails,Stainless Steel,0.2,158.4
+CMP-0040,Mirrors,Standard Manual,0.2,369.6
+CMP-0041,Mirrors,Heated Manual,0.3,386.4
+CMP-0042,Mirrors,Heated Power,0.35,394.8
+CMP-0043,Mirrors,Heated Power + Camera,0.15,361.2
+CMP-0044,Stop Arm,Standard 1-Arm,0.4,336.0
+CMP-0045,Stop Arm,Extended 1-Arm,0.3,322.0
+CMP-0046,Stop Arm,Dual Arm,0.3,322.0
+CMP-0047,Crossing Gate,None,0.25,468.0
+CMP-0048,Crossing Gate,Standard Front,0.45,509.6
+CMP-0049,Crossing Gate,Extended Front,0.3,478.4
+CMP-0050,Roof Hatch,Standard Emergency,0.5,290.0
+CMP-0051,Roof Hatch,Large Emergency,0.3,266.8
+CMP-0052,Roof Hatch,Dual Hatch,0.2,255.2
+CMP-0053,Storage Compartments,None,0.2,686.4
+CMP-0054,Storage Compartments,Under-Floor Single,0.35,733.2
+CMP-0055,Storage Compartments,Under-Floor Dual,0.3,717.6
+CMP-0056,Storage Compartments,Rear Compartment,0.15,670.8
+CMP-0057,Fuel Type,Diesel,0.35,0.0
+CMP-0058,Fuel Type,Gasoline,0.2,0.0
+CMP-0059,Fuel Type,Propane,0.25,0.0
+CMP-0060,Fuel Type,CNG,0.1,0.0
+CMP-0061,Fuel Type,Electric,0.1,0.0

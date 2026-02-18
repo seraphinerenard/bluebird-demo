@@ -1,0 +1,62 @@
+component_id,category,variant,current_stock,monthly_demand_avg,lead_time_weeks,lead_time_std_weeks,unit_cost,supplier_id,supplier_name,last_restock_date
+CMP-0001,Floor Colour,Grey Standard,346,168.7,3,0.8,268.8,SUP-002,FloorTech Industries,2025-12-29 00:00:00
+CMP-0002,Floor Colour,Blue,80,83.7,3,0.8,246.4,SUP-002,FloorTech Industries,2025-12-20 00:00:00
+CMP-0003,Floor Colour,Black,94,61.3,3,0.8,240.8,SUP-002,FloorTech Industries,2026-01-07 00:00:00
+CMP-0004,Floor Colour,Green,43,48.0,3,0.8,235.2,SUP-002,FloorTech Industries,2026-01-23 00:00:00
+CMP-0005,Floor Colour,Brown,57,43.0,3,0.8,235.2,SUP-002,FloorTech Industries,2026-01-06 00:00:00
+CMP-0006,Floor Colour,Red,8,18.0,3,0.8,229.6,SUP-002,FloorTech Industries,2026-01-27 00:00:00
+CMP-0007,Seat Material,Vinyl Brown,348,151.3,4,1.0,79.9,SUP-001,American Seating Co.,2026-01-23 00:00:00
+CMP-0008,Seat Material,Vinyl Blue,171,109.7,4,1.0,76.5,SUP-001,American Seating Co.,2025-12-18 00:00:00
+CMP-0009,Seat Material,Vinyl Grey,46,72.3,4,1.0,74.8,SUP-001,American Seating Co.,2026-01-05 00:00:00
+CMP-0010,Seat Material,Fabric Blue,94,48.0,4,1.0,71.4,SUP-001,American Seating Co.,2026-01-02 00:00:00
+CMP-0011,Seat Material,Fabric Grey,95,41.3,4,1.0,71.4,SUP-001,American Seating Co.,2025-12-01 00:00:00
+CMP-0012,Interior Trim,Standard White,26,188.3,3,0.8,117.6,SUP-002,FloorTech Industries,2025-12-11 00:00:00
+CMP-0013,Interior Trim,Grey,23,113.0,3,0.8,108.0,SUP-002,FloorTech Industries,2025-12-10 00:00:00
+CMP-0014,Interior Trim,Blue,65,63.7,3,0.8,103.2,SUP-002,FloorTech Industries,2026-01-17 00:00:00
+CMP-0015,Interior Trim,Black,10,57.7,3,0.8,103.2,SUP-002,FloorTech Industries,2025-12-27 00:00:00
+CMP-0016,Exterior Paint,National School Bus Yellow,827,259.7,2,0.5,988.0,SUP-007,PPG Industries,2026-01-13 00:00:00
+CMP-0017,Exterior Paint,White,72,56.7,2,0.5,817.0,SUP-007,PPG Industries,2026-01-11 00:00:00
+CMP-0018,Exterior Paint,Activity Bus Blue,11,42.7,2,0.5,798.0,SUP-007,PPG Industries,2025-12-29 00:00:00
+CMP-0019,Exterior Paint,Black,15,39.7,2,0.5,790.4,SUP-007,PPG Industries,2025-12-04 00:00:00
+CMP-0020,Exterior Paint,Custom,63,24.0,2,0.5,786.6,SUP-007,PPG Industries,2025-12-26 00:00:00
+CMP-0021,Wheelchair Lift,None,289,292.0,8,2.0,4536.0,SUP-003,BraunAbility,2025-12-31 00:00:00
+CMP-0022,Wheelchair Lift,Type A Hydraulic,38,65.0,8,2.0,3612.0,SUP-003,BraunAbility,2026-01-29 00:00:00
+CMP-0023,Wheelchair Lift,Type B Electric,12,41.7,8,2.0,3528.0,SUP-003,BraunAbility,2025-12-10 00:00:00
+CMP-0024,Wheelchair Lift,Type C Heavy-Duty,34,24.0,8,2.0,3444.0,SUP-003,BraunAbility,2025-12-31 00:00:00
+CMP-0025,AC Unit,None,331,127.7,6,1.5,2852.0,SUP-004,Carrier Commercial,2026-01-20 00:00:00
+CMP-0026,AC Unit,Roof-Mount Standard,20,148.7,6,1.5,2914.0,SUP-004,Carrier Commercial,2026-01-16 00:00:00
+CMP-0027,AC Unit,Roof-Mount Heavy,77,86.3,6,1.5,2728.0,SUP-004,Carrier Commercial,2025-12-20 00:00:00
+CMP-0028,AC Unit,Split System,162,60.0,6,1.5,2666.0,SUP-004,Carrier Commercial,2026-01-25 00:00:00
+CMP-0029,Camera System,Basic 4-Camera,327,131.7,5,1.2,1656.0,SUP-005,REI Bus Safety Systems,2025-12-25 00:00:00
+CMP-0030,Camera System,8-Camera HD,204,152.7,5,1.2,1692.0,SUP-005,REI Bus Safety Systems,2025-12-30 00:00:00
+CMP-0031,Camera System,12-Camera 360°,11,74.7,5,1.2,1584.0,SUP-005,REI Bus Safety Systems,2026-01-04 00:00:00
+CMP-0032,Camera System,AI Vision Pro,170,63.7,5,1.2,1548.0,SUP-005,REI Bus Safety Systems,2025-12-14 00:00:00
+CMP-0033,Lighting Package,Standard Halogen,362,112.3,3,0.7,585.0,SUP-006,Truck-Lite Co.,2025-12-14 00:00:00
+CMP-0034,Lighting Package,LED Basic,402,153.0,3,0.7,611.0,SUP-006,Truck-Lite Co.,2025-12-04 00:00:00
+CMP-0035,Lighting Package,LED Premium,187,96.7,3,0.7,585.0,SUP-006,Truck-Lite Co.,2026-01-05 00:00:00
+CMP-0036,Lighting Package,LED + Emergency Strobe,29,60.7,3,0.7,559.0,SUP-006,Truck-Lite Co.,2026-01-19 00:00:00
+CMP-0037,Handrails,Standard Steel,342,210.0,4,1.0,180.0,SUP-001,American Seating Co.,2025-12-30 00:00:00
+CMP-0038,Handrails,Padded Steel,34,127.0,4,1.0,165.6,SUP-001,American Seating Co.,2026-01-24 00:00:00
+CMP-0039,Handrails,Stainless Steel,26,85.7,4,1.0,158.4,SUP-001,American Seating Co.,2025-12-07 00:00:00
+CMP-0040,Mirrors,Standard Manual,166,79.7,5,1.2,369.6,SUP-005,REI Bus Safety Systems,2026-01-23 00:00:00
+CMP-0041,Mirrors,Heated Manual,211,130.3,5,1.2,386.4,SUP-005,REI Bus Safety Systems,2025-12-14 00:00:00
+CMP-0042,Mirrors,Heated Power,454,141.0,5,1.2,394.8,SUP-005,REI Bus Safety Systems,2026-01-27 00:00:00
+CMP-0043,Mirrors,Heated Power + Camera,37,71.7,5,1.2,361.2,SUP-005,REI Bus Safety Systems,2025-12-14 00:00:00
+CMP-0044,Stop Arm,Standard 1-Arm,121,176.0,3,0.7,336.0,SUP-006,Truck-Lite Co.,2026-01-14 00:00:00
+CMP-0045,Stop Arm,Extended 1-Arm,120,116.7,3,0.7,322.0,SUP-006,Truck-Lite Co.,2026-01-05 00:00:00
+CMP-0046,Stop Arm,Dual Arm,276,130.0,3,0.7,322.0,SUP-006,Truck-Lite Co.,2025-12-11 00:00:00
+CMP-0047,Crossing Gate,None,188,105.7,3,0.7,468.0,SUP-006,Truck-Lite Co.,2026-01-16 00:00:00
+CMP-0048,Crossing Gate,Standard Front,466,193.3,3,0.7,509.6,SUP-006,Truck-Lite Co.,2026-01-12 00:00:00
+CMP-0049,Crossing Gate,Extended Front,341,123.7,3,0.7,478.4,SUP-006,Truck-Lite Co.,2025-12-11 00:00:00
+CMP-0050,Roof Hatch,Standard Emergency,503,212.3,5,1.3,290.0,SUP-008,Specialty Manufacturing,2026-01-12 00:00:00
+CMP-0051,Roof Hatch,Large Emergency,336,125.3,5,1.3,266.8,SUP-008,Specialty Manufacturing,2026-01-15 00:00:00
+CMP-0052,Roof Hatch,Dual Hatch,32,85.0,5,1.3,255.2,SUP-008,Specialty Manufacturing,2026-01-25 00:00:00
+CMP-0053,Storage Compartments,None,89,76.0,5,1.3,686.4,SUP-008,Specialty Manufacturing,2025-12-17 00:00:00
+CMP-0054,Storage Compartments,Under-Floor Single,205,159.3,5,1.3,733.2,SUP-008,Specialty Manufacturing,2026-01-28 00:00:00
+CMP-0055,Storage Compartments,Under-Floor Dual,113,120.3,5,1.3,717.6,SUP-008,Specialty Manufacturing,2025-12-01 00:00:00
+CMP-0056,Storage Compartments,Rear Compartment,212,67.0,5,1.3,670.8,SUP-008,Specialty Manufacturing,2025-12-14 00:00:00
+CMP-0057,Fuel Type,Diesel,12,133.0,10,2.5,0.0,SUP-009,ROUSH CleanTech,2025-12-05 00:00:00
+CMP-0058,Fuel Type,Gasoline,184,82.3,10,2.5,0.0,SUP-009,ROUSH CleanTech,2025-12-10 00:00:00
+CMP-0059,Fuel Type,Propane,257,85.7,10,2.5,0.0,SUP-009,ROUSH CleanTech,2026-01-23 00:00:00
+CMP-0060,Fuel Type,CNG,39,42.7,10,2.5,0.0,SUP-009,ROUSH CleanTech,2026-01-05 00:00:00
+CMP-0061,Fuel Type,Electric,81,79.0,10,2.5,0.0,SUP-009,ROUSH CleanTech,2026-01-03 00:00:00
