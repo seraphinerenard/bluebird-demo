@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { LayoutDashboard, TrendingUp, ShieldCheck, Brain, ChevronRight, Sliders, Bot } from 'lucide-react'
+import { FontAwesomeIcon, faBus } from './utils/icons'
 import Overview from './pages/Overview'
 import DemandForecast from './pages/DemandForecast'
 import InventoryHealth from './pages/InventoryHealth'
@@ -59,7 +60,7 @@ export default function App() {
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-bluebird-blue">
       <div className="text-center animate-pulse">
-        <div className="text-7xl mb-6">🚌</div>
+        <div className="mb-6"><FontAwesomeIcon icon={faBus} className="text-7xl text-bluebird-yellow" /></div>
         <div className="text-white text-xl font-semibold tracking-wide">Loading Blue Bird Intelligence...</div>
         <div className="mt-3 text-blue-200 text-sm">Preparing inventory analytics</div>
       </div>
@@ -93,7 +94,7 @@ export default function App() {
         {/* Logo */}
         <div className="px-5 py-6 border-b border-white/10">
           <div className="flex items-center gap-3">
-            <span className="text-3xl">🚌</span>
+            <FontAwesomeIcon icon={faBus} className="text-3xl text-bluebird-yellow" />
             <div>
               <h1 className="text-base font-bold text-white tracking-tight leading-tight">Blue Bird Corporation</h1>
               <p className="text-[10px] text-blue-300 font-medium mt-0.5 tracking-wide uppercase">Inventory Intelligence</p>

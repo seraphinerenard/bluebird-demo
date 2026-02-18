@@ -129,7 +129,7 @@ export function processQuestion(question, data) {
       const s = safetyStock.find(ss => ss.component_id === r.component_id)
       return sum + (s ? s.recommended_order_qty * s.unit_cost : 0)
     }, 0)
-    return `**Executive Summary**\n\nTracking ${kpis.total_skus} SKUs across 15 component categories.\n\n🔴 **${kpis.critical_items} critical** items need immediate action — ${criticals.length > 0 ? `worst is ${criticals[0]?.variant} with only ${criticals[0]?.weeks_of_cover} weeks of cover` : 'none identified'}.\n\n🟡 **${kpis.warning_items} warning** items should be monitored.\n\n💰 **$${(kpis.total_at_risk_value / 1e6).toFixed(1)}M** in production value is at risk.\n\n📦 Recommended total procurement: **$${(totalOrder / 1e6).toFixed(1)}M** across ${recommendations.length} line items.`
+    return `**Executive Summary**\n\nTracking ${kpis.total_skus} SKUs across 15 component categories.\n\n**${kpis.critical_items} critical** items need immediate action — ${criticals.length > 0 ? `worst is ${criticals[0]?.variant} with only ${criticals[0]?.weeks_of_cover} weeks of cover` : 'none identified'}.\n\n**${kpis.warning_items} warning** items should be monitored.\n\n**$${(kpis.total_at_risk_value / 1e6).toFixed(1)}M** in production value is at risk.\n\nRecommended total procurement: **$${(totalOrder / 1e6).toFixed(1)}M** across ${recommendations.length} line items.`
   }
 
   // Most critical / urgent
@@ -175,14 +175,14 @@ export function processQuestion(question, data) {
   if (q.match(/forecast|demand|predict|trend/)) {
     const bestCat = Object.entries(metrics).sort((a, b) => a[1].WMAPE - b[1].WMAPE)[0]
     const worstCat = Object.entries(metrics).sort((a, b) => b[1].WMAPE - a[1].WMAPE)[0]
-    return `**Forecast Performance:**\n\n✅ Best accuracy: **${bestCat[0]}** (WMAPE ${bestCat[1].WMAPE}%)\n⚠️ Lowest accuracy: **${worstCat[0]}** (WMAPE ${worstCat[1].WMAPE}%)\n\nForecasts cover ${[...new Set(forecasts.map(f => f.year_month))].length} months across ${Object.keys(metrics).length} categories. Use the Demand Forecast tab to explore variant-level detail with confidence intervals.`
+    return `**Forecast Performance:**\n\nBest accuracy: **${bestCat[0]}** (WMAPE ${bestCat[1].WMAPE}%)\nLowest accuracy: **${worstCat[0]}** (WMAPE ${worstCat[1].WMAPE}%)\n\nForecasts cover ${[...new Set(forecasts.map(f => f.year_month))].length} months across ${Object.keys(metrics).length} categories. Use the Demand Forecast tab to explore variant-level detail with confidence intervals.`
   }
 
   // Cost / value / money
   if (q.match(/cost|value|spend|budget|money|dollar/)) {
     const totalOrder = safetyStock.reduce((sum, s) => sum + s.recommended_order_qty * s.unit_cost, 0)
     const criticalOrder = safetyStock.filter(s => s.status === 'critical').reduce((sum, s) => sum + s.recommended_order_qty * s.unit_cost, 0)
-    return `**Cost Analysis:**\n\n💰 Total recommended procurement: **$${(totalOrder / 1e6).toFixed(1)}M**\n🔴 Critical items only: **$${(criticalOrder / 1e6).toFixed(1)}M**\n⚠️ At-risk production value: **$${(kpis.total_at_risk_value / 1e6).toFixed(1)}M**\n\nPrioritizing critical orders first gives the best risk-to-spend ratio.`
+    return `**Cost Analysis:**\n\nTotal recommended procurement: **$${(totalOrder / 1e6).toFixed(1)}M**\nCritical items only: **$${(criticalOrder / 1e6).toFixed(1)}M**\nAt-risk production value: **$${(kpis.total_at_risk_value / 1e6).toFixed(1)}M**\n\nPrioritizing critical orders first gives the best risk-to-spend ratio.`
   }
 
   // Specific category lookup
@@ -193,7 +193,7 @@ export function processQuestion(question, data) {
     const critical = items.filter(s => s.status === 'critical').length
     const catMetrics = metrics[matchedCat]
     let response = `**${matchedCat}** — ${items.length} variants tracked\n\n`
-    response += `🔴 Critical: ${critical} | 🟡 Warning: ${items.filter(s => s.status === 'warning').length} | 🟢 OK: ${items.filter(s => s.status === 'ok').length}\n\n`
+    response += `Critical: ${critical} | Warning: ${items.filter(s => s.status === 'warning').length} | OK: ${items.filter(s => s.status === 'ok').length}\n\n`
     if (catMetrics) response += `Forecast accuracy: WMAPE ${catMetrics.WMAPE}%\n\n`
     items.sort((a, b) => b.stockout_risk - a.stockout_risk).forEach(item => {
       response += `• ${item.variant}: ${item.current_stock} in stock, ${(item.stockout_risk * 100).toFixed(0)}% risk\n`

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { generateProcurementSteps, generateProactiveAlerts, runGoalOptimizer } from '../utils/agent'
+import { IconFromId, FontAwesomeIcon, faRobot, faBell, faBullseye, faCircleCheck, faBoxesStacked, faSackDollar, faArrowTrendDown, faTriangleExclamation } from '../utils/icons'
 
 // ─── Autonomous Procurement Agent ───────────────────────────────────────────
 
@@ -70,7 +71,7 @@ function ProcurementAgent({ data }) {
 
       {phase === 'idle' && (
         <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 text-center">
-          <div className="text-4xl mb-3">🤖</div>
+          <div className="mb-3"><FontAwesomeIcon icon={faRobot} className="text-4xl text-bluebird-blue" /></div>
           <p className="text-sm text-gray-500">Click <span className="font-semibold text-bluebird-blue">Run Agent</span> to start the autonomous procurement workflow.</p>
           <p className="text-xs text-gray-400 mt-1">The agent will analyze inventory, triage critical items, optimize orders, and generate POs.</p>
         </div>
@@ -84,7 +85,7 @@ function ProcurementAgent({ data }) {
             return (
               <div key={i} className={`bg-white rounded-xl border shadow-sm overflow-hidden transition-all duration-300 ${isLatest ? 'border-bluebird-blue/30 ring-2 ring-bluebird-blue/10' : 'border-gray-100'}`}>
                 <div className="px-4 py-3 flex items-center gap-3 bg-gray-50/50">
-                  <span className="text-xl">{step.icon}</span>
+                  <IconFromId id={step.icon} size="lg" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Step {i + 1}</span>
@@ -94,7 +95,7 @@ function ProcurementAgent({ data }) {
                     <h4 className="text-sm font-bold text-gray-900 mt-0.5">{step.title}</h4>
                   </div>
                   {!isThinking && !isLatest && (
-                    <span className="text-green-500 text-lg">✓</span>
+                    <FontAwesomeIcon icon={faCircleCheck} className="text-green-500 text-lg" />
                   )}
                   {(isThinking || isLatest) && (
                     <div className="w-5 h-5 border-2 border-bluebird-blue border-t-transparent rounded-full animate-spin" />
@@ -147,7 +148,7 @@ function ProcurementAgent({ data }) {
 
       {phase === 'done' && (
         <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
-          <span className="text-xl">✅</span>
+          <FontAwesomeIcon icon={faCircleCheck} className="text-xl text-green-500 mt-0.5" />
           <div>
             <div className="text-sm font-bold text-green-800">Agent Complete</div>
             <p className="text-xs text-green-600 mt-0.5">All {allSteps.length} steps executed successfully. Purchase orders are ready for review and approval.</p>
@@ -192,7 +193,7 @@ function AlertFeed({ data }) {
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="px-4 py-3 flex items-start gap-3">
-                <span className="text-lg mt-0.5">{alert.icon}</span>
+                <span className="mt-1"><IconFromId id={alert.icon} size="md" /></span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className={`px-1.5 py-0.5 rounded text-[9px] font-bold uppercase ${style.badge}`}>{alert.type}</span>
@@ -204,7 +205,7 @@ function AlertFeed({ data }) {
                     <span className="text-[10px] font-bold text-bluebird-blue bg-bluebird-blue/10 px-2 py-0.5 rounded-full">{alert.action}</span>
                   </div>
                 </div>
-                <span className={`text-gray-400 text-xs transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>▼</span>
+                <span className={`text-gray-400 text-xs transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>&#x25BC;</span>
               </div>
 
               {isExpanded && (
@@ -303,13 +304,16 @@ function GoalOptimizer({ data }) {
         <div className="space-y-4">
           {/* Summary cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <SummaryCard label="Items Ordered" value={result.summary.itemsOrdered} icon="📦" />
-            <SummaryCard label="Total Spent" value={`$${(result.summary.totalSpent / 1e6).toFixed(2)}M`} icon="💰" />
-            <SummaryCard label="Risk Reduction" value={`${result.summary.riskReduction}pp`} icon="📉" accent />
+            <SummaryCard label="Items Ordered" value={result.summary.itemsOrdered} iconEl={<FontAwesomeIcon icon={faBoxesStacked} className="text-lg text-bluebird-blue" />} />
+            <SummaryCard label="Total Spent" value={`$${(result.summary.totalSpent / 1e6).toFixed(2)}M`} iconEl={<FontAwesomeIcon icon={faSackDollar} className="text-lg text-bluebird-yellow" />} />
+            <SummaryCard label="Risk Reduction" value={`${result.summary.riskReduction}pp`} iconEl={<FontAwesomeIcon icon={faArrowTrendDown} className="text-lg text-green-500" />} accent />
             <SummaryCard
               label="Converged"
               value={result.summary.converged ? 'Yes' : 'No'}
-              icon={result.summary.converged ? '✅' : '⚠️'}
+              iconEl={result.summary.converged
+                ? <FontAwesomeIcon icon={faCircleCheck} className="text-lg text-green-500" />
+                : <FontAwesomeIcon icon={faTriangleExclamation} className="text-lg text-amber-500" />
+              }
               warn={!result.summary.converged}
             />
           </div>
@@ -389,11 +393,11 @@ function GoalOptimizer({ data }) {
   )
 }
 
-function SummaryCard({ label, value, icon, accent, warn }) {
+function SummaryCard({ label, value, iconEl, accent, warn }) {
   return (
     <div className={`bg-white rounded-xl border p-4 shadow-sm ${warn ? 'border-amber-200' : accent ? 'border-green-200' : 'border-gray-100'}`}>
       <div className="flex items-center gap-2">
-        <span className="text-lg">{icon}</span>
+        {iconEl}
         <div>
           <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{label}</div>
           <div className={`text-lg font-extrabold ${warn ? 'text-amber-600' : accent ? 'text-green-600' : 'text-bluebird-blue'}`}>{value}</div>
@@ -406,9 +410,9 @@ function SummaryCard({ label, value, icon, accent, warn }) {
 // ─── Agent Hub (Main Component) ─────────────────────────────────────────────
 
 const TABS = [
-  { id: 'procurement', label: 'Procurement Agent', icon: '🤖' },
-  { id: 'alerts', label: 'Alert Feed', icon: '🔔' },
-  { id: 'optimizer', label: 'Goal Optimizer', icon: '🎯' },
+  { id: 'procurement', label: 'Procurement Agent', icon: faRobot },
+  { id: 'alerts', label: 'Alert Feed', icon: faBell },
+  { id: 'optimizer', label: 'Goal Optimizer', icon: faBullseye },
 ]
 
 export default function AgentHub({ data }) {
@@ -428,7 +432,7 @@ export default function AgentHub({ data }) {
                 : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'
             }`}
           >
-            <span>{t.icon}</span>
+            <FontAwesomeIcon icon={t.icon} />
             {t.label}
           </button>
         ))}

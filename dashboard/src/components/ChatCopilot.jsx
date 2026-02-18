@@ -58,7 +58,7 @@ const QUICK_PROMPTS = [
 export default function ChatCopilot({ data }) {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([
-    { role: 'assistant', content: "👋 I'm the **Blue Bird Inventory Copilot**. I analyze your real-time inventory data and provide actionable insights.\n\nAsk me anything about stock levels, forecasts, risks, or recommendations." }
+    { role: 'assistant', content: "Hello! I'm the **Blue Bird Inventory Copilot**. I analyze your real-time inventory data and provide actionable insights.\n\nAsk me anything about stock levels, forecasts, risks, or recommendations." }
   ])
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)

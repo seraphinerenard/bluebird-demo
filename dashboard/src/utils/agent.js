@@ -11,7 +11,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'scan',
     title: 'Scanning Inventory Levels',
-    icon: '🔍',
+    icon: 'search',
     thinking: `Analyzing ${kpis.total_skus} active SKUs across ${[...new Set(safetyStock.map(s => s.category))].length} component categories...`,
     result: `Found ${kpis.critical_items} critical items, ${kpis.warning_items} warnings, and ${kpis.ok_items} healthy components.`,
     duration: 1200,
@@ -22,7 +22,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'triage',
     title: 'Triaging Critical Items',
-    icon: '🚨',
+    icon: 'alert',
     thinking: `Evaluating stockout timelines... Cross-referencing current stock against weekly demand rates and supplier lead times...`,
     result: `${imminent.length} items have less than 1 week of cover — these are at imminent stockout risk. Worst: ${imminent[0]?.variant || 'N/A'} (${imminent[0]?.category || ''}) with only ${imminent[0]?.weeks_of_cover || 0} weeks remaining.`,
     duration: 1500,
@@ -41,7 +41,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'supplier',
     title: 'Analyzing Supplier Capacity',
-    icon: '🏭',
+    icon: 'factory',
     thinking: `Mapping ${criticals.length} critical items to ${supplierEntries.length} suppliers... Checking lead times and concentration risk...`,
     result: `Top supplier exposure: ${supplierEntries.slice(0, 3).map(([name, info]) => `${name} (${info.count} items, ${info.totalQty} units)`).join('; ')}. ${supplierEntries.length > 3 ? `Plus ${supplierEntries.length - 3} additional suppliers.` : ''}`,
     duration: 1800,
@@ -52,7 +52,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'optimize',
     title: 'Optimizing Order Quantities',
-    icon: '📊',
+    icon: 'chart',
     thinking: `Running EOQ optimization... Balancing holding costs vs stockout risk... Applying safety stock formula: Z(${(criticals[0]?.service_level * 100 || 95).toFixed(0)}%) × σ_demand × √(lead_time)...`,
     result: `Optimal procurement for ${criticals.length} critical items: ${criticals.reduce((s, c) => s + c.recommended_order_qty, 0).toLocaleString()} total units at estimated cost of $${(totalCost / 1e6).toFixed(2)}M.`,
     duration: 2000,
@@ -75,7 +75,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'generate',
     title: 'Generating Purchase Orders',
-    icon: '📝',
+    icon: 'file',
     thinking: `Drafting ${pos.length} purchase orders grouped by supplier... Calculating delivery timelines and cost breakdowns...`,
     result: `Generated ${pos.length} POs: ${pos.slice(0, 3).map(po => `${po.supplier} ($${(po.totalCost / 1000).toFixed(0)}K)`).join(', ')}${pos.length > 3 ? ` + ${pos.length - 3} more` : ''}.`,
     purchaseOrders: pos,
@@ -87,7 +87,7 @@ export function generateProcurementSteps(data) {
   steps.push({
     phase: 'assess',
     title: 'Final Risk Assessment',
-    icon: '✅',
+    icon: 'check',
     thinking: `Projecting post-order inventory positions... Calculating residual risk after procurement...`,
     result: `After executing all ${pos.length} POs, estimated stockout risk drops from ${(criticals.reduce((s, c) => s + c.stockout_risk, 0) / criticals.length * 100).toFixed(0)}% avg to <5%. Recommend also addressing top ${Math.min(10, warnings.length)} warning items ($${(warningCost / 1e6).toFixed(1)}M) to achieve 99%+ service level.`,
     duration: 1200,
@@ -107,7 +107,7 @@ export function generateProactiveAlerts(data) {
     alerts.push({
       id: `stockout-${item.component_id}`,
       type: 'critical',
-      icon: '🔴',
+      icon: 'circle-red',
       timestamp: new Date(now - Math.random() * 3600000 * 2),
       title: `Stockout imminent: ${item.variant || item.category}`,
       detail: `Only ${item.current_stock} units remaining (~${daysLeft} days). Auto-drafted emergency PO for ${item.recommended_order_qty} units to ${item.supplier_name}.`,
@@ -129,7 +129,7 @@ export function generateProactiveAlerts(data) {
         alerts.push({
           id: `spike-${cat}`,
           type: 'warning',
-          icon: '📈',
+          icon: 'trend-up',
           timestamp: new Date(now - Math.random() * 3600000 * 6),
           title: `Demand surge detected: ${cat}`,
           detail: `Forecasted ${growth.toFixed(0)}% increase from ${months[0]} to ${months[months.length - 1]}. Pre-positioning additional inventory recommended.`,
@@ -147,7 +147,7 @@ export function generateProactiveAlerts(data) {
     alerts.push({
       id: 'leadtime-alert',
       type: 'warning',
-      icon: '🚚',
+      icon: 'truck',
       timestamp: new Date(now - Math.random() * 3600000 * 4),
       title: `Long lead time risk: ${supplier}`,
       detail: `${longLeadCritical.length} critical items from ${supplier} have ${longLeadCritical[0].lead_time_weeks}+ week lead times. Dual-sourcing evaluation initiated.`,
@@ -161,7 +161,7 @@ export function generateProactiveAlerts(data) {
   alerts.push({
     id: 'budget-opt',
     type: 'info',
-    icon: '💰',
+    icon: 'money',
     timestamp: new Date(now - Math.random() * 3600000 * 8),
     title: 'Budget optimization completed',
     detail: `Analyzed ${safetyStock.length} SKUs. Prioritized ordering sequence saves ~12% vs blanket replenishment. Total recommended: $${(totalOrder / 1e6).toFixed(1)}M.`,
